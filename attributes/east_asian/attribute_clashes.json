@@ -1,0 +1,167 @@
+[
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "hair_styles.txt",
+        "secondary_attributes": [
+            "Bald",
+            "Buzzed"
+        ]
+    },
+    {
+    "fixed_file": "genders.txt",
+    "fixed_attributes": [
+        "Female"
+    ],
+    "secondary_file": "male_clothing.txt",
+    "secondary_attributes": [
+        "changshan",
+        "hanfu robe",
+        "kimono and hakama",
+        "hanbok durumagi",
+        "traditional deel robe",
+        "blazer and dress shirt",
+        "business suit and tie",
+        "casual shirt and chinos",
+        "polo shirt and trousers",
+        "denim jacket and jeans",
+        "turtleneck sweater",
+        "winter coat and scarf",
+        "linen shirt and trousers",
+        "hoodie and joggers",
+        "formal waistcoat over dress shirt",
+        "knit jumper and corduroys"
+    ]
+},
+{
+    "fixed_file": "genders.txt",
+    "fixed_attributes": [
+        "Male"
+    ],
+    "secondary_file": "female_clothing.txt",
+    "secondary_attributes": [
+        "qipao",
+        "hanfu",
+        "kimono",
+        "yukata",
+        "hanbok",
+        "jeogori and skirt",
+        "blazer and trousers",
+        "business suit",
+        "casual shirt and jeans",
+        "summer dress",
+        "turtleneck sweater",
+        "winter coat",
+        "denim jacket and skirt",
+        "polo shirt and trousers",
+        "hoodie and joggers",
+        "linen shirt and wide-leg trousers",
+        "knit cardigan and trousers"
+    ]
+},
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "facial_hair.txt",
+        "secondary_attributes": [
+            "Clean-shaven",
+            "Stubble",
+            "Light beard",
+            "Full beard",
+            "Mustache",
+            "Goatee",
+            "Mutton chops",
+            "Van Dyke beard",
+            "Soul patch",
+            "Handlebar mustache",
+            "Pencil mustache",
+            "Horseshoe mustache",
+            "Anchor beard",
+            "Balbo beard",
+            "Ducktail beard",
+            "Circle beard",
+            "Imperial mustache",
+            "Chevron mustache",
+            "Barely-there beard"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": [
+            "70-79",
+            "80+"
+        ],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black",
+            "Brown",
+            "Blonde",
+            "Red",
+            "Blue",
+            "Green",
+            "Pink",
+            "Purple",
+            "Orange",
+            "Yellow",
+            "Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": [
+            "70-79",
+            "80+"
+        ],
+        "secondary_file": "skin_type.txt",
+        "secondary_attributes": [
+            "Smooth and clear"
+        ]
+    },
+    {
+        "fixed_file": "hair_styles.txt",
+        "fixed_attributes": [
+            "Bald"
+        ],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black",
+            "Brown",
+            "Blonde",
+            "Red",
+            "Gray",
+            "White",
+            "Silver",
+            "Blue",
+            "Green",
+            "Pink",
+            "Purple",
+            "Orange",
+            "Yellow",
+            "Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Male"
+        ],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": [
+            "Hijab"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": [
+            "Kippah"
+        ]
+    }
+]

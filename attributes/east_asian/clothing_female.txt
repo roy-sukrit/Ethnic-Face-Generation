@@ -1,0 +1,17 @@
+qipao,0.06
+hanfu,0.05
+kimono,0.06
+yukata,0.04
+hanbok,0.06
+jeogori and skirt,0.04
+blazer and trousers,0.08
+business suit,0.07
+casual shirt and jeans,0.07
+summer dress,0.06
+turtleneck sweater,0.06
+winter coat,0.06
+denim jacket and skirt,0.06
+polo shirt and trousers,0.06
+hoodie and joggers,0.05
+linen shirt and wide-leg trousers,0.05
+knit cardigan and trousers,0.05
