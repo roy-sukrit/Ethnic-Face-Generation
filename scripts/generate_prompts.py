@@ -424,7 +424,8 @@ def generate_prompts(dataset_dir, number_of_prompts, file_prob_txt, attribute_cl
         "gray t-shirt, grey tshirt, prison uniform, inmate clothing, plain tee, undershirt, tank top, "
         "harsh flash, studio flash glare, ring light reflection, specular highlights, lens flare, light glare, "
         "shiny skin, oily skin, sweaty skin, overexposed face, blown highlights, hotspot lighting, glossy forehead, "
-        "reflective glasses, mirror reflection, harsh shadows, low quality, blurry"
+        "reflective glasses, mirror reflection, harsh shadows, low quality, blurry, "
+        "full body, full length portrait, whole body shot, legs, feet, knees"
     )
     # Extra terms added only for side-pose images to push Flux away from its frontal default
     negative_prompt_side = (
@@ -569,9 +570,20 @@ Input Parameters:
 
             # Ensure framing/background suffix
             if "Photo captures" not in generated_text:
-                generated_text += " Photo captures the subject from the chest up."
+                if pose == "front":
+                    generated_text += " Photo captures the subject from the chest up. White background."
+                else:
+                    generated_text += " Portrait shot framed from the chest up. Head, neck, shoulders, and upper chest are visible. No full body."
             if "White background" not in generated_text:
                 generated_text += " White background."
+
+            # Strip subjective filler sentences the LLM adds despite rule 3
+            filler_patterns = [
+                r"[^.]*\b(lighting|illuminat|radiat|glow|luminous|elegance|beauty|beautiful|graceful|dignified|serene|timeless|captivat|stunning|striking|alluring|sophisticated|refined|essence|aura|presence|charm|poise)[^.]*\.\s*",
+            ]
+            for pattern in filler_patterns:
+                generated_text = re.sub(pattern, "", generated_text, flags=re.IGNORECASE)
+            generated_text = generated_text.strip()
 
             # Enforce clothing consistency
             generated_text = enforce_single_clothing(generated_text, selected_attributes, subject)
@@ -607,7 +619,10 @@ Input Parameters:
                         retry_text = retry_text[9:end].strip()
                     retry_text = caption_start2 + (" " if retry_text and not retry_text.startswith(" ") else "") + retry_text
                 if "Photo captures" not in retry_text:
-                    retry_text += " Photo captures the subject from the chest up."
+                    if pose == "front":
+                        retry_text += " Photo captures the subject from the chest up. White background."
+                    else:
+                        retry_text += " Portrait shot framed from the chest up. Head, neck, shoulders, and upper chest are visible. No full body."
                 if "White background" not in retry_text:
                     retry_text += " White background."
                 retry_text = enforce_single_clothing(retry_text, selected_attributes, subject2)
