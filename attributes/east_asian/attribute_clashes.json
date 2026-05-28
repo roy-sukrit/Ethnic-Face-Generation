@@ -15,7 +15,7 @@
     "fixed_attributes": [
         "Female"
     ],
-    "secondary_file": "male_clothing.txt",
+    "secondary_file": "clothing_male.txt",
     "secondary_attributes": [
         "changshan",
         "hanfu robe",
@@ -40,7 +40,7 @@
     "fixed_attributes": [
         "Male"
     ],
-    "secondary_file": "female_clothing.txt",
+    "secondary_file": "clothing_female.txt",
     "secondary_attributes": [
         "qipao",
         "hanfu",
