@@ -281,13 +281,9 @@ def construct_prompt(selected_attributes, pose: str = None):
     if pose is None:
         pose = sample_pose()
 
-    # For front pose: no pose description needed — keep the LLM prompt clean
-    # so it focuses entirely on face features (matches the old working version).
-    # For side poses: pass a short label so the LLM knows to mention the angle,
-    # but don't force verbatim injection — the full description is appended to
-    # the final prompt AFTER generation so it doesn't crowd out face features.
-    if pose != "front":
-        prompt_parts.append(f"Head pose: {POSE_LEAD[pose]}")
+    # Do NOT pass head pose to the LLM at all.
+    # Pose direction is injected programmatically after generation so the LLM
+    # cannot hallucinate the wrong direction (left vs right confusion).
 
     # Decide subject
     if gender in ["male", "man"]:
@@ -373,25 +369,40 @@ def enforce_single_clothing(generated_text: str, selected_attributes: dict, subj
     if not clothing_val:
         return generated_text
 
-    sentences = re.split(r'(?<=[.!?])\s+', generated_text.strip())
+    # Separate the trigger/caption prefix from the rest so sentence splitting
+    # never accidentally drops or mangles the <s7ll2f4h:0.5> opening.
+    prefix = ""
+    body = generated_text
+    if generated_text.startswith("<"):
+        # Find end of the second sentence (after "neutral face expression.")
+        marker = "The subject has a neutral face expression."
+        idx = generated_text.find(marker)
+        if idx != -1:
+            split_at = idx + len(marker)
+            prefix = generated_text[:split_at].rstrip()
+            body = generated_text[split_at:].lstrip()
+
+    sentences = re.split(r'(?<=[.!?])\s+', body.strip())
     cleaned = []
     for s in sentences:
         sl = s.lower()
         if "wearing" in sl and clothing_val.lower() not in sl:
             continue
         cleaned.append(s)
-    generated_text = " ".join(cleaned)
+    body = " ".join(cleaned)
 
-    if clothing_val.lower() not in generated_text.lower():
+    result = (prefix + " " + body).strip() if prefix else body
+
+    if clothing_val.lower() not in result.lower():
         pronoun = "She" if subject == "woman" else "He" if subject == "man" else "They"
         insert = f"{pronoun} is wearing {clothing_val}."
-        idx = generated_text.find("Photo captures")
+        idx = result.find("Photo captures")
         if idx != -1:
-            generated_text = generated_text[:idx].rstrip() + " " + insert + " " + generated_text[idx:].lstrip()
+            result = result[:idx].rstrip() + " " + insert + " " + result[idx:].lstrip()
         else:
-            generated_text = generated_text.rstrip() + " " + insert
+            result = result.rstrip() + " " + insert
 
-    return generated_text
+    return result
 
 
 @inference_mode()
@@ -431,7 +442,7 @@ Rules for Output:
 5) NEVER repeat the opening line. Start your continuation directly from where the prompt leaves off.
 6) If any clothing parameter is present (e.g., "Clothing" or anything containing the word "clothing"), you MUST include it in the caption using the exact phrase: "wearing {clothing}".
 7) Do NOT invent extra outfits. Mention EXACTLY ONE outfit using ONLY the provided Clothing value.
-8) If a Head pose parameter is present, mention the head angle naturally in the caption. Do not over-describe it — one short sentence is enough (e.g. "Her head is turned to the left.").
+8) Do NOT mention head pose or head direction in your output at all. The pose will be handled separately.
 9) The Origin/Ethnicity parameter MUST always be included. It is mandatory. Never skip it.
 10) Output ONLY plain text. Do NOT wrap your output in quotes, XML tags, HTML attributes, markdown, or any formatting like content="...". Just output the raw continuation text directly.
 
@@ -456,12 +467,18 @@ Input Parameters:
         for _ in range(cur_bs):
             selected_attributes = select_attributes(attributes, clash_rules)
 
-            # Keep only the gender-appropriate clothing file
+            # Keep only one clothing file per identity
             g = selected_attributes.get("genders.txt", "").lower()
             if g in ["female", "woman"]:
                 selected_attributes.pop("clothing_male.txt", None)
             elif g in ["male", "man"]:
                 selected_attributes.pop("clothing_female.txt", None)
+            else:
+                # Non-binary: randomly keep one clothing file, drop the other
+                if random.choice([True, False]):
+                    selected_attributes.pop("clothing_male.txt", None)
+                else:
+                    selected_attributes.pop("clothing_female.txt", None)
 
             # pose is sampled inside construct_prompt when not specified
             dynamic_prompt, caption_start, subject, pose = construct_prompt(selected_attributes)
@@ -478,12 +495,17 @@ Input Parameters:
             _, json_path = make_output_paths(dataset_dir, uid, subject, pose, shard_dirs)
             batch_meta.append((selected_attributes, caption_start, subject, pose, uid, json_path))
 
-        # Tokenize batch once
+        # Tokenize batch once.
+        # IMPORTANT: truncate from the LEFT so the "Prompt: <caption_start>" at the
+        # END of each input is always preserved — this is what the LLM must see to
+        # continue correctly. Losing the end causes the LLM to generate its own opening.
+        tokenizer.truncation_side = "left"
         model_inputs = tokenizer(
             texts,
             return_tensors="pt",
             padding=True,
             truncation=True,
+            max_length=4096,  # Qwen2.5 supports 32k; 4096 is safe for our inputs
         ).to(model.device)
 
         # Generate batch once
@@ -522,14 +544,12 @@ Input Parameters:
                     generated_text = generated_text[9:end].strip()
 
 
-            # Ensure caption prefix — also fix mid-string repetition of the opening line
-            # (LLM sometimes outputs "...symm" + caption_start + rest, causing broken words)
-            if caption_start in generated_text and not generated_text.startswith(caption_start):
-                # Strip everything before the last occurrence of caption_start
+            # Always prepend caption_start cleanly.
+            # Strip ALL occurrences the LLM may have included to avoid duplication.
+            while caption_start in generated_text:
                 idx = generated_text.rfind(caption_start)
-                generated_text = generated_text[idx:]
-            if not generated_text.startswith(caption_start):
-                generated_text = caption_start + " " + generated_text.lstrip()
+                generated_text = generated_text[idx + len(caption_start):].lstrip()
+            generated_text = caption_start + " " + generated_text.lstrip()
 
             # For side poses: append the full pose description AFTER the face
             # feature text so Flux gets the strong angular signal without the
@@ -595,7 +615,28 @@ Input Parameters:
 
                 if not contains_non_english(retry_text):
                     generated_text = retry_text
-                    pose = pose2  # use the re-sampled pose from the retry
+                    # Keep original pose — don't resample, pose is set at batch build time
+
+            # Rebuild caption_start from pose to guarantee left/right is correct
+            # (retry or other logic may have drifted caption_start out of sync)
+            if pose == "front":
+                caption_start = f"<s7ll2f4h:0.5>, Photograph of a {subject}. The subject has a neutral face expression."
+            else:
+                caption_start = f"<s7ll2f4h:0.5>, {POSE_LEAD[pose]} Photograph of a {subject}. The subject has a neutral face expression."
+
+            # Final safety net — trigger token must always be present
+            trigger = "<s7ll2f4h:0.5>"
+            if trigger not in generated_text:
+                generated_text = caption_start + " " + generated_text.lstrip()
+            # Also fix wrong direction if present — strip and re-prepend
+            elif not generated_text.startswith(caption_start):
+                # Wrong caption_start was prepended — remove it and use correct one
+                for wrong_lead in POSE_LEAD.values():
+                    wrong_start = f"<s7ll2f4h:0.5>, {wrong_lead}"
+                    if generated_text.startswith(wrong_start) and wrong_start != f"<s7ll2f4h:0.5>, {POSE_LEAD[pose]}":
+                        generated_text = generated_text[len(wrong_start):].lstrip()
+                        generated_text = caption_start + " " + generated_text.lstrip()
+                        break
 
             # Write JSON — now includes head_pose fields
             # Front pose: use base negative only. Side poses: add anti-frontal terms.
