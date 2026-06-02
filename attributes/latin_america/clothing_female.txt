@@ -1,0 +1,17 @@
+guayabera blouse,0.07
+colourful floral dress,0.07
+summer dress,0.07
+casual shirt and jeans,0.07
+football jersey and shorts,0.06
+bright blouse and wide leg trousers,0.06
+market vendor apron over blouse,0.06
+wrap skirt and blouse,0.06
+maxi dress,0.06
+salsa dress,0.06
+beach dress,0.06
+hoodie and jeans,0.05
+linen blouse and trousers,0.05
+blazer and trousers,0.05
+business suit,0.05
+colourful knit top and skirt,0.05
+embroidered blouse and jeans,0.05

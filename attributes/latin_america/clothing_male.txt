@@ -1,0 +1,17 @@
+guayabera shirt,0.08
+linen shirt and trousers,0.07
+casual shirt and jeans,0.07
+polo shirt and trousers,0.07
+football jersey and shorts,0.07
+tracksuit,0.06
+colourful short sleeve shirt and trousers,0.06
+market stall worker apron over casual shirt,0.06
+short sleeve button shirt and chinos,0.06
+cowboy hat and shirt and jeans,0.06
+woven belt and trousers and shirt,0.06
+cumbia shirt and trousers,0.06
+beach shirt and shorts,0.06
+hoodie and jeans,0.05
+work uniform shirt and trousers,0.05
+blazer and dress shirt,0.05
+business suit and tie,0.05

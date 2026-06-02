@@ -1,0 +1,168 @@
+[
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "hair_styles.txt",
+        "secondary_attributes": [
+            "Bald",
+            "Buzzed"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "clothing_male.txt",
+        "secondary_attributes": [
+            "guayabera shirt",
+            "linen shirt and trousers",
+            "casual shirt and jeans",
+            "polo shirt and trousers",
+            "football jersey and shorts",
+            "tracksuit",
+            "colourful short sleeve shirt and trousers",
+            "market stall worker apron over casual shirt",
+            "short sleeve button shirt and chinos",
+            "cowboy hat and shirt and jeans",
+            "woven belt and trousers and shirt",
+            "cumbia shirt and trousers",
+            "beach shirt and shorts",
+            "hoodie and jeans",
+            "work uniform shirt and trousers",
+            "blazer and dress shirt",
+            "business suit and tie"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Male"
+        ],
+        "secondary_file": "clothing_female.txt",
+        "secondary_attributes": [
+            "guayabera blouse",
+            "colourful floral dress",
+            "summer dress",
+            "casual shirt and jeans",
+            "football jersey and shorts",
+            "bright blouse and wide leg trousers",
+            "market vendor apron over blouse",
+            "wrap skirt and blouse",
+            "maxi dress",
+            "salsa dress",
+            "beach dress",
+            "hoodie and jeans",
+            "linen blouse and trousers",
+            "blazer and trousers",
+            "business suit",
+            "colourful knit top and skirt",
+            "embroidered blouse and jeans"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "facial_hair.txt",
+        "secondary_attributes": [
+            "Clean-shaven",
+            "Stubble",
+            "Light beard",
+            "Full beard",
+            "Mustache",
+            "Goatee",
+            "Mutton chops",
+            "Van Dyke beard",
+            "Soul patch",
+            "Handlebar mustache",
+            "Pencil mustache",
+            "Horseshoe mustache",
+            "Anchor beard",
+            "Balbo beard",
+            "Ducktail beard",
+            "Circle beard",
+            "Imperial mustache",
+            "Chevron mustache",
+            "Barely-there beard"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": [
+            "70-79",
+            "80+"
+        ],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black",
+            "Brown",
+            "Blonde",
+            "Red",
+            "Blue",
+            "Green",
+            "Pink",
+            "Purple",
+            "Orange",
+            "Yellow",
+            "Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": [
+            "70-79",
+            "80+"
+        ],
+        "secondary_file": "skin_type.txt",
+        "secondary_attributes": [
+            "Smooth and clear"
+        ]
+    },
+    {
+        "fixed_file": "hair_styles.txt",
+        "fixed_attributes": [
+            "Bald"
+        ],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black",
+            "Brown",
+            "Blonde",
+            "Red",
+            "Gray",
+            "White",
+            "Silver",
+            "Blue",
+            "Green",
+            "Pink",
+            "Purple",
+            "Orange",
+            "Yellow",
+            "Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Male"
+        ],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": [
+            "Hijab"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": [
+            "Female"
+        ],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": [
+            "Kippah"
+        ]
+    }
+]

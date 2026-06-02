@@ -1,0 +1,9 @@
+Mexico,0.22
+Guatemala,0.08
+Colombia,0.12
+Peru,0.10
+Brazil,0.18
+Argentina,0.10
+Cuba,0.06
+Dominican Republic,0.06
+Afro-Latino,0.08
