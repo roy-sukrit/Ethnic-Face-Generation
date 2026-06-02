@@ -1,0 +1,6 @@
+Han Chinese Mainland,0.25
+Southern Chinese,0.10
+Japanese,0.25
+Korean,0.25
+Taiwanese,0.10
+Mongolic Influenced East Asian,0.05

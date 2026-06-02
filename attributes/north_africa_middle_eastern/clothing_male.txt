@@ -1,0 +1,17 @@
+thobe,0.08
+djellaba,0.07
+kaftan and trousers,0.07
+jalabiya,0.06
+sherwal and shirt,0.06
+blazer and dress shirt,0.06
+business suit and tie,0.06
+casual shirt and jeans,0.07
+polo shirt and trousers,0.06
+linen shirt and trousers,0.06
+tracksuit,0.05
+hoodie and jeans,0.05
+short sleeve shirt and trousers,0.06
+work uniform shirt and trousers,0.05
+football jersey and shorts,0.05
+embroidered shirt and trousers,0.05
+bisht cloak over thobe,0.05

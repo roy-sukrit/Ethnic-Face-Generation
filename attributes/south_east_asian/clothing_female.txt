@@ -1,0 +1,17 @@
+kebaya dress,0.08
+ao dai,0.07
+barong dress,0.07
+batik wrap skirt and blouse,0.07
+traditional sarong and blouse,0.06
+blazer and trousers,0.06
+business suit,0.05
+casual shirt and jeans,0.07
+summer dress,0.06
+linen blouse and trousers,0.06
+maxi dress,0.06
+embroidered blouse and skirt,0.05
+wrap dress,0.05
+hoodie and jeans,0.05
+floral blouse and trousers,0.05
+polo shirt and trousers,0.04
+football jersey and shorts,0.05

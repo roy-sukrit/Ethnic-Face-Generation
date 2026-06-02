@@ -1,0 +1,17 @@
+abaya,0.08
+hijab and modest dress,0.07
+kaftan dress,0.07
+djellaba dress,0.07
+takchita dress,0.06
+blazer and trousers,0.06
+business suit,0.05
+casual shirt and jeans,0.07
+summer dress,0.06
+linen blouse and trousers,0.06
+maxi dress,0.06
+embroidered blouse and skirt,0.06
+wrap dress,0.05
+hoodie and jeans,0.05
+floral blouse and trousers,0.05
+modest blouse and wide leg trousers,0.04
+football jersey and shorts,0.04

@@ -1,0 +1,8 @@
+Moroccan,0.18
+Algerian,0.15
+Tunisian,0.12
+Libyan,0.07
+Egyptian,0.10
+Saudi Arabia,0.15
+Lebanon,0.13
+Iran,0.10
