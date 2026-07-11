@@ -1,0 +1,17 @@
+arctic parka dress,0.09
+fur trimmed anorak,0.08
+sealskin jacket and skirt,0.08
+knit sweater and thermal trousers,0.07
+winter coat and scarf,0.07
+traditional tunic dress,0.07
+hoodie and jeans,0.06
+casual shirt and jeans,0.06
+fleece jacket and trousers,0.06
+summer dress,0.05
+maxi dress,0.05
+blazer and trousers,0.06
+business suit,0.05
+linen blouse and trousers,0.05
+polo shirt and trousers,0.05
+knit cardigan and skirt,0.05
+tracksuit,0.05

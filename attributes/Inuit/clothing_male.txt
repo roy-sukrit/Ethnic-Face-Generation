@@ -1,0 +1,17 @@
+arctic parka and trousers,0.09
+fur trimmed anorak,0.08
+sealskin jacket and trousers,0.08
+knit sweater and thermal trousers,0.07
+winter coat and scarf,0.07
+traditional tunic and trousers,0.07
+hoodie and jeans,0.06
+casual shirt and jeans,0.06
+fleece jacket and trousers,0.06
+polo shirt and trousers,0.06
+work uniform shirt and trousers,0.05
+tracksuit,0.05
+thermal layer and trousers,0.05
+waterproof jacket and trousers,0.05
+blazer and dress shirt,0.05
+business suit and tie,0.05
+football jersey and shorts,0.05

@@ -1,0 +1,17 @@
+traditional deel robe,0.10
+embroidered deel and boots,0.09
+fur trimmed coat and trousers,0.08
+winter parka and trousers,0.08
+knit sweater and trousers,0.07
+casual shirt and jeans,0.07
+polo shirt and trousers,0.06
+hoodie and jeans,0.06
+tracksuit,0.06
+fleece jacket and trousers,0.06
+work uniform shirt and trousers,0.05
+blazer and dress shirt,0.05
+business suit and tie,0.05
+football jersey and shorts,0.05
+thermal layer and trousers,0.05
+linen shirt and trousers,0.05
+short sleeve shirt and trousers,0.05

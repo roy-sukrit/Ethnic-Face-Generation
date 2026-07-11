@@ -1,0 +1,104 @@
+[
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Female"],
+        "secondary_file": "hair_styles.txt",
+        "secondary_attributes": ["Bald", "Buzzed"]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Female"],
+        "secondary_file": "clothing_male.txt",
+        "secondary_attributes": [
+            "lavalava wrap skirt and shirt",
+            "ta'ovala mat skirt and shirt",
+            "aloha shirt and trousers",
+            "traditional woven skirt and tunic",
+            "rugby jersey and shorts",
+            "casual shirt and jeans",
+            "polo shirt and trousers",
+            "hoodie and jeans",
+            "beach shirt and shorts",
+            "tracksuit",
+            "football jersey and shorts",
+            "work uniform shirt and trousers",
+            "blazer and dress shirt",
+            "linen shirt and trousers",
+            "business suit and tie",
+            "short sleeve shirt and trousers",
+            "knit jumper and trousers"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Male"],
+        "secondary_file": "clothing_female.txt",
+        "secondary_attributes": [
+            "lavalava wrap skirt and blouse",
+            "puletasi dress",
+            "muumuu dress",
+            "traditional woven skirt and top",
+            "aloha dress",
+            "casual shirt and jeans",
+            "summer dress",
+            "hoodie and jeans",
+            "maxi dress",
+            "floral blouse and trousers",
+            "rugby jersey and shorts",
+            "blazer and trousers",
+            "business suit",
+            "polo shirt and trousers",
+            "beach dress",
+            "knit cardigan and skirt",
+            "tracksuit"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Female"],
+        "secondary_file": "facial_hair.txt",
+        "secondary_attributes": [
+            "Clean-shaven","Stubble","Light beard","Full beard","Mustache",
+            "Goatee","Mutton chops","Van Dyke beard","Soul patch",
+            "Handlebar mustache","Pencil mustache","Horseshoe mustache",
+            "Anchor beard","Balbo beard","Ducktail beard","Circle beard",
+            "Imperial mustache","Chevron mustache","Barely-there beard"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": ["70-79","80+"],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black","Brown","Blonde","Red","Blue","Green",
+            "Pink","Purple","Orange","Yellow","Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "ages.txt",
+        "fixed_attributes": ["70-79","80+"],
+        "secondary_file": "skin_type.txt",
+        "secondary_attributes": ["Smooth and clear"]
+    },
+    {
+        "fixed_file": "hair_styles.txt",
+        "fixed_attributes": ["Bald"],
+        "secondary_file": "hair_colors.txt",
+        "secondary_attributes": [
+            "Black","Brown","Blonde","Red","Gray","White","Silver",
+            "Blue","Green","Pink","Purple","Orange","Yellow","Multicolored"
+        ]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Male"],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": ["Hijab"]
+    },
+    {
+        "fixed_file": "genders.txt",
+        "fixed_attributes": ["Female"],
+        "secondary_file": "headwear.txt",
+        "secondary_attributes": ["Kippah"]
+    }
+]

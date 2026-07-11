@@ -1,0 +1,17 @@
+lavalava wrap skirt and shirt,0.09
+ta'ovala mat skirt and shirt,0.08
+aloha shirt and trousers,0.08
+traditional woven skirt and tunic,0.07
+rugby jersey and shorts,0.08
+casual shirt and jeans,0.07
+polo shirt and trousers,0.07
+hoodie and jeans,0.06
+beach shirt and shorts,0.07
+tracksuit,0.06
+football jersey and shorts,0.06
+work uniform shirt and trousers,0.05
+blazer and dress shirt,0.05
+linen shirt and trousers,0.05
+business suit and tie,0.05
+short sleeve shirt and trousers,0.05
+knit jumper and trousers,0.05

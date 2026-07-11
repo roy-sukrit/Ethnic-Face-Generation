@@ -1,0 +1,7 @@
+— polynesian —
+Maori,0.25
+Samoan,0.18
+Tongan,0.15
+Hawaiian,0.15
+Fijian,0.12
+Aboriginal Australian,0.15

@@ -1,0 +1,17 @@
+traditional deel dress,0.10
+embroidered deel and boots,0.09
+fur trimmed coat and skirt,0.08
+winter parka and trousers,0.08
+knit sweater and trousers,0.07
+casual shirt and jeans,0.07
+summer dress,0.06
+hoodie and jeans,0.06
+maxi dress,0.06
+floral blouse and trousers,0.05
+blazer and trousers,0.05
+business suit,0.05
+polo shirt and trousers,0.05
+fleece jacket and trousers,0.05
+linen blouse and trousers,0.05
+knit cardigan and skirt,0.05
+tracksuit,0.05

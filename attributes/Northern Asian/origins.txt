@@ -1,0 +1,6 @@
+— northern_asian —
+Mongolian,0.45
+Buryat,0.15
+Tuvan,0.12
+Yakut,0.15
+Altai,0.13

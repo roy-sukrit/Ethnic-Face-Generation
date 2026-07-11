@@ -1,0 +1,6 @@
+— inuit —
+Canadian Inuit,0.35
+Alaskan Inuit,0.25
+Greenlandic Inuit,0.20
+Siberian Inuit,0.15
+Sami,0.05
