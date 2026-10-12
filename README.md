@@ -16,7 +16,7 @@ Existing datasets (FairFace, VGGFace2, CelebA) are heavily skewed toward Caucasi
 ## Dataset
 
 <div align="center">
-  <img width="500" height="500" alt="Sample synthetic identities" src="" />
+  <img width="500" height="500" alt="Sample synthetic identities" src="image.png" />
 </div>
 
 <br/>
